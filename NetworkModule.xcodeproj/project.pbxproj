@@ -7,9 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6217EFB821AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */; };
+		6217EFBA21AB0B1900A845F2 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */; };
+		6217EFBC21AB12B600A845F2 /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */; };
+		6217EFBF21AB175200A845F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6217EFBE21AB175100A845F2 /* Alamofire.framework */; };
+		6217EFC421AB238F00A845F2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6217EFBE21AB175100A845F2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6217EFCC21AB26B900A845F2 /* ResponseStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */; };
 		62D0778821AA2D1600837C0C /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D0777E21AA2D1500837C0C /* NetworkModule.framework */; };
 		62D0778D21AA2D1600837C0C /* NetworkModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */; };
 		62D0778F21AA2D1600837C0C /* NetworkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 62D0778121AA2D1500837C0C /* NetworkModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62D077A221AA2DF600837C0C /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0779E21AA2DF600837C0C /* NetworkRequest.swift */; };
+		62D077A321AA2DF600837C0C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0779F21AA2DF600837C0C /* HTTPMethod.swift */; };
+		62D077A421AA2DF600837C0C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077A021AA2DF600837C0C /* NetworkManager.swift */; };
+		62D077A521AA2DF600837C0C /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077A121AA2DF600837C0C /* NetworkResponse.swift */; };
+		62D077A721AA2E5900837C0C /* NetworkResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */; };
+		62D077A921AA2E6E00837C0C /* NetworkResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */; };
+		62D077B321AA328200837C0C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077B221AA328200837C0C /* Result.swift */; };
+		62D077B821AA36A500837C0C /* HTTPParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,13 +36,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6217EFC321AB238400A845F2 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6217EFC421AB238F00A845F2 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableNetworkResponseDecoder.swift; sourceTree = "<group>"; };
+		6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
+		6217EFBE21AB175100A845F2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStatusCodeValidator.swift; sourceTree = "<group>"; };
 		62D0777E21AA2D1500837C0C /* NetworkModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D0778121AA2D1500837C0C /* NetworkModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkModule.h; sourceTree = "<group>"; };
 		62D0778221AA2D1500837C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D0778721AA2D1600837C0C /* NetworkModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModuleTests.swift; sourceTree = "<group>"; };
 		62D0778E21AA2D1600837C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62D0779E21AA2DF600837C0C /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		62D0779F21AA2DF600837C0C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		62D077A021AA2DF600837C0C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		62D077A121AA2DF600837C0C /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidator.swift; sourceTree = "<group>"; };
+		62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseDecoder.swift; sourceTree = "<group>"; };
+		62D077B221AA328200837C0C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameterEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,18 +85,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				62D0778821AA2D1600837C0C /* NetworkModule.framework in Frameworks */,
+				6217EFBF21AB175200A845F2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6217EFBD21AB175100A845F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6217EFBE21AB175100A845F2 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		62D0777421AA2D1500837C0C = {
 			isa = PBXGroup;
 			children = (
 				62D0778021AA2D1500837C0C /* NetworkModule */,
 				62D0778B21AA2D1600837C0C /* NetworkModuleTests */,
 				62D0777F21AA2D1500837C0C /* Products */,
+				6217EFBD21AB175100A845F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +122,8 @@
 		62D0778021AA2D1500837C0C /* NetworkModule */ = {
 			isa = PBXGroup;
 			children = (
+				62D077B121AA327700837C0C /* Helpers */,
+				62D0779D21AA2DDE00837C0C /* Core */,
 				62D0778121AA2D1500837C0C /* NetworkModule.h */,
 				62D0778221AA2D1500837C0C /* Info.plist */,
 			);
@@ -84,6 +137,32 @@
 				62D0778E21AA2D1600837C0C /* Info.plist */,
 			);
 			path = NetworkModuleTests;
+			sourceTree = "<group>";
+		};
+		62D0779D21AA2DDE00837C0C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				62D077A021AA2DF600837C0C /* NetworkManager.swift */,
+				6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */,
+				62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */,
+				62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */,
+				62D0779E21AA2DF600837C0C /* NetworkRequest.swift */,
+				62D077A121AA2DF600837C0C /* NetworkResponse.swift */,
+				62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */,
+				62D0779F21AA2DF600837C0C /* HTTPMethod.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		62D077B121AA327700837C0C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				62D077B221AA328200837C0C /* Result.swift */,
+				6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */,
+				6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */,
+				6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +204,7 @@
 				62D0778321AA2D1600837C0C /* Sources */,
 				62D0778421AA2D1600837C0C /* Frameworks */,
 				62D0778521AA2D1600837C0C /* Resources */,
+				6217EFC321AB238400A845F2 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +228,7 @@
 				TargetAttributes = {
 					62D0777D21AA2D1500837C0C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					62D0778621AA2D1600837C0C = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +275,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D077A421AA2DF600837C0C /* NetworkManager.swift in Sources */,
+				62D077A921AA2E6E00837C0C /* NetworkResponseDecoder.swift in Sources */,
+				62D077B821AA36A500837C0C /* HTTPParameterEncoding.swift in Sources */,
+				6217EFB821AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift in Sources */,
+				6217EFBC21AB12B600A845F2 /* NetworkTarget.swift in Sources */,
+				62D077A521AA2DF600837C0C /* NetworkResponse.swift in Sources */,
+				6217EFBA21AB0B1900A845F2 /* NetworkAPI.swift in Sources */,
+				62D077A321AA2DF600837C0C /* HTTPMethod.swift in Sources */,
+				62D077A221AA2DF600837C0C /* NetworkRequest.swift in Sources */,
+				62D077B321AA328200837C0C /* Result.swift in Sources */,
+				62D077A721AA2E5900837C0C /* NetworkResponseValidator.swift in Sources */,
+				6217EFCC21AB26B900A845F2 /* ResponseStatusCodeValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +434,7 @@
 		62D0779321AA2D1600837C0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.gk.NetworkModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +460,7 @@
 		62D0779421AA2D1600837C0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,7 +485,12 @@
 		62D0779621AA2D1600837C0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NetworkModuleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +507,12 @@
 		62D0779721AA2D1600837C0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NetworkModuleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
