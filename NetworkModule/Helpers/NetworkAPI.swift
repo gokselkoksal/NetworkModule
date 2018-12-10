@@ -16,13 +16,13 @@ public protocol NetworkAPIProtocol {
 
 public extension NetworkAPIProtocol {
   
-  public func target<ResponseDecoder: NetworkResponseDecoderProtocol>(
+  public func makeTask<ResponseDecoder: NetworkResponseDecoderProtocol>(
     path: String,
     method: HTTPMethod,
     operationType: NetworkOperationType,
     responseDecoder: ResponseDecoder,
     additionalHeaders: [String: String]? = nil,
-    additionalResponseValidators: [NetworkResponseValidatorProtocol]? = nil) -> NetworkTarget<ResponseDecoder>
+    additionalResponseValidators: [NetworkResponseValidatorProtocol]? = nil) -> NetworkTaskDescriptor<ResponseDecoder>
   {
     var headers = self.headers
     var responseValidators = self.responseValidators
@@ -42,11 +42,13 @@ public extension NetworkAPIProtocol {
       path: path,
       method: method,
       operationType: operationType,
-      headers: headers)
+      headers: headers
+    )
     
-    return NetworkTarget<ResponseDecoder>(
+    return NetworkTaskDescriptor<ResponseDecoder>(
       request: request,
-      responseDecoder: responseDecoder,
-      responseValidators: responseValidators)
+      responseValidators: responseValidators,
+      responseDecoder: responseDecoder
+    )
   }
 }

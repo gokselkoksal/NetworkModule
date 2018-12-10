@@ -12,13 +12,18 @@ import NetworkModule
 
 class AlamofireNetworkAdapter: NetworkAdapterProtocol {
   
+  enum Error: Swift.Error {
+    case invalidRequest
+  }
+  
+  weak var delegate: NetworkAdapterDelegate?
   private let session: SessionManager
   
   init() {
     session = SessionManager.default
   }
   
-  func start(_ request: NetworkRequest, completion: @escaping (NetworkResponse<Data>) -> Void) -> URLSessionTask? {
+  func send(_ request: NetworkRequest, completion: @escaping (NetworkResponse<Data>) -> Void) -> Cancellable? {
     let url = request.baseURL.appendingPathComponent(request.path)
     let method = AlamofireMapper.mapMethod(request.method)
     let headers = request.headers
@@ -37,14 +42,38 @@ class AlamofireNetworkAdapter: NetworkAdapterProtocol {
       encoding = AlamofireMapper.mapEncoding(requestEncoding)
     }
     
-    let alamofireRequest = session.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+    guard var urlRequest = try? URLRequestBuilder.make(url: url, method: method, parameters: parameters, encoding: encoding, headers: headers) else {
+      let response = NetworkResponse<Data>.failure(Error.invalidRequest)
+      completion(response)
+      return nil
+    }
     
-    alamofireRequest.responseData { (dataResponse) in
+    urlRequest = delegate?.prepareRequestForNetworkAdapter(urlRequest) ?? urlRequest
+    delegate?.networkAdapterWillSendRequest(urlRequest)
+    
+    let alamofireRequest = session.request(urlRequest)
+    alamofireRequest.responseData { [weak self] (dataResponse) in
+      guard let self = self else { return }
+      
       let response = AlamofireMapper.mapResponse(dataResponse)
+      self.delegate?.networkAdapterDidReceiveResponse(response)
       completion(response)
     }
     
-    return alamofireRequest.task
+    return CancellableToken(urlSessionTask: alamofireRequest.task)
+  }
+}
+
+private class URLRequestBuilder {
+  
+  static func make(url: Alamofire.URLConvertible,
+                   method: Alamofire.HTTPMethod,
+                   parameters: Alamofire.Parameters?,
+                   encoding: Alamofire.ParameterEncoding,
+                   headers: Alamofire.HTTPHeaders?) throws -> URLRequest
+  {
+    let request = try URLRequest(url: url, method: method, headers: headers)
+    return try encoding.encode(request, with: parameters)
   }
 }
 

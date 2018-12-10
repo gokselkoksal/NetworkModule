@@ -9,33 +9,93 @@
 import Foundation
 
 public protocol NetworkAdapterProtocol {
-  func start(_ request: NetworkRequest, completion: @escaping (NetworkResponse<Data>) -> Void) -> URLSessionTask?
+  var delegate: NetworkAdapterDelegate? { get set }
+  func send(_ request: NetworkRequest, completion: @escaping (NetworkResponse<Data>) -> Void) -> Cancellable?
+}
+
+public protocol NetworkAdapterDelegate: class {
+  func prepareRequestForNetworkAdapter(_ request: URLRequest) -> URLRequest
+  func networkAdapterWillSendRequest(_ request: URLRequest)
+  func networkAdapterDidReceiveResponse(_ response: NetworkResponse<Data>)
 }
 
 public class NetworkManager {
   
   // TODO: Add stubbing.
   private let networkAdapter: NetworkAdapterProtocol
+  private let interceptor: NetworkInterceptorProtocol?
+  private let plugins: [NetworkPluginProtocol]
   
-  public init(networkAdapter: NetworkAdapterProtocol) {
+  public init(
+    networkAdapter: NetworkAdapterProtocol,
+    interceptor: NetworkInterceptorProtocol? = nil,
+    plugins: [NetworkPluginProtocol] = [])
+  {
     self.networkAdapter = networkAdapter
+    self.interceptor = interceptor
+    self.plugins = plugins
   }
   
   @discardableResult
   public func start<Decoder: NetworkResponseDecoderProtocol>(
-    _ target: NetworkTarget<Decoder>,
-    completion: @escaping (NetworkResponse<Decoder.Model>) -> Void) -> URLSessionTask?
+    _ task: NetworkTaskDescriptor<Decoder>,
+    completion: @escaping (NetworkResponse<Decoder.Model>) -> Void) -> Cancellable?
   {
-    return networkAdapter.start(target.request) { (dataResponse) in
-      do {
-        try target.responseValidators.forEach({ try $0.validate(dataResponse) })
-        let response = target.responseDecoder.decode(dataResponse)
-        completion(response)
-      } catch {
-        let result = GenericResult<Decoder.Model>.failure(error)
-        let response = dataResponse.updatingResult(result)
-        completion(response)
+    let cancellableWrapper = CancellableWrapper()
+    
+    func performActualTask(_ task: NetworkTaskDescriptor<Decoder>) {
+      let requestToken = self.networkAdapter.send(task.request) { [weak self] (dataResponse) in
+        guard let self = self else { return }
+        
+        do {
+          try task.responseValidators.forEach({ try $0.validate(dataResponse) })
+          let response = task.responseDecoder.decode(dataResponse)
+          self.plugins.forEach({ $0.didDecodeResponse(response) })
+          completion(response)
+        } catch {
+          let result = GenericResult<Decoder.Model>.failure(error)
+          let response = dataResponse.updatingResult(result)
+          completion(response)
+        }
       }
+      cancellableWrapper.token = requestToken
     }
+    
+    // Intercept request, if there's an interceptor:
+    if let interceptor = interceptor {
+      let token = interceptor.intercept(task) { (result) in
+        switch result {
+        case .success(let task):
+          // Carry on with actual request:
+          performActualTask(task)
+        case .failure(let error):
+          let response = NetworkResponse<Decoder.Model>.failure(error)
+          completion(response)
+        }
+      }
+      cancellableWrapper.token = token
+    } else {
+      // Carry on with actual request:
+      performActualTask(task)
+    }
+    
+    return cancellableWrapper
+  }
+}
+
+extension NetworkManager: NetworkAdapterDelegate {
+  
+  public func prepareRequestForNetworkAdapter(_ request: URLRequest) -> URLRequest {
+    return plugins.reduce(request) { (request, plugin) -> URLRequest in
+      return plugin.prepareRequest(request)
+    }
+  }
+  
+  public func networkAdapterWillSendRequest(_ request: URLRequest) {
+    plugins.forEach({ $0.willSendRequest(request) })
+  }
+  
+  public func networkAdapterDidReceiveResponse(_ response: NetworkResponse<Data>) {
+    plugins.forEach({ $0.didReceiveResponse(response) })
   }
 }

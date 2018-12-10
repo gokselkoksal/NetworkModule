@@ -15,9 +15,9 @@ class JSONPlaceholderAPI: NetworkAPIProtocol {
   let headers: [String : String] = ["accept": "application/json"]
   let responseValidators: [NetworkResponseValidatorProtocol] = [ResponseStatusCodeValidator(successCodeRange: 200..<300)]
   
-  func posts() -> NetworkTarget<DecodableNetworkResponseDecoder<[Post]>> {
+  func posts() -> NetworkTaskDescriptor<DecodableNetworkResponseDecoder<[Post]>> {
     let decoder = DecodableNetworkResponseDecoder<[Post]>()
-    return target(
+    return makeTask(
       path: "/posts",
       method: .get,
       operationType: .plainRequest,

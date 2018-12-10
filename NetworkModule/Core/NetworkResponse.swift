@@ -25,6 +25,10 @@ public class NetworkResponse<Model> {
 
 public extension NetworkResponse {
   
+  public static func failure(_ error: Error) -> NetworkResponse<Model> {
+    return NetworkResponse<Model>(request: nil, response: nil, data: nil, result: .failure(error))
+  }
+  
   public func updatingResult<Model>(_ result: GenericResult<Model>) -> NetworkResponse<Model> {
     return NetworkResponse<Model>(request: request, response: response, data: data, result: result)
   }

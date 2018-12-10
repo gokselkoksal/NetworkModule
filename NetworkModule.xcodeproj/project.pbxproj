@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6217EFB821AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */; };
 		6217EFBA21AB0B1900A845F2 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */; };
-		6217EFBC21AB12B600A845F2 /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */; };
+		6217EFBC21AB12B600A845F2 /* NetworkTaskDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFBB21AB12B600A845F2 /* NetworkTaskDescriptor.swift */; };
 		6217EFBF21AB175200A845F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6217EFBE21AB175100A845F2 /* Alamofire.framework */; };
 		6217EFC221AB176600A845F2 /* AlamofireNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFC121AB176600A845F2 /* AlamofireNetworkAdapter.swift */; };
 		6217EFC421AB238F00A845F2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6217EFBE21AB175100A845F2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -26,6 +26,9 @@
 		62D077A921AA2E6E00837C0C /* NetworkResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */; };
 		62D077B321AA328200837C0C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077B221AA328200837C0C /* Result.swift */; };
 		62D077B821AA36A500837C0C /* HTTPParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */; };
+		8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */; };
+		8F1DDA5221BED40300FE3750 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5121BED40300FE3750 /* Cancellable.swift */; };
+		8F1DDA5521BEDBED00FE3750 /* NetworkInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +58,7 @@
 /* Begin PBXFileReference section */
 		6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableNetworkResponseDecoder.swift; sourceTree = "<group>"; };
 		6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
-		6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
+		6217EFBB21AB12B600A845F2 /* NetworkTaskDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTaskDescriptor.swift; sourceTree = "<group>"; };
 		6217EFBE21AB175100A845F2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6217EFC121AB176600A845F2 /* AlamofireNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkAdapter.swift; sourceTree = "<group>"; };
 		6217EFC921AB261C00A845F2 /* JSONPlaceholderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceholderAPI.swift; sourceTree = "<group>"; };
@@ -74,6 +77,9 @@
 		62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseDecoder.swift; sourceTree = "<group>"; };
 		62D077B221AA328200837C0C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPParameterEncoding.swift; sourceTree = "<group>"; };
+		8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerPlugin.swift; sourceTree = "<group>"; };
+		8F1DDA5121BED40300FE3750 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				62D077B121AA327700837C0C /* Helpers */,
+				8F1DDA5321BEDBC300FE3750 /* Misc */,
 				62D0779D21AA2DDE00837C0C /* Core */,
 				62D0778121AA2D1500837C0C /* NetworkModule.h */,
 				62D0778221AA2D1500837C0C /* Info.plist */,
@@ -157,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				62D077A021AA2DF600837C0C /* NetworkManager.swift */,
-				6217EFBB21AB12B600A845F2 /* NetworkTarget.swift */,
+				6217EFBB21AB12B600A845F2 /* NetworkTaskDescriptor.swift */,
 				62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */,
 				62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */,
 				62D0779E21AA2DF600837C0C /* NetworkRequest.swift */,
@@ -177,6 +184,16 @@
 				6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8F1DDA5321BEDBC300FE3750 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				8F1DDA5121BED40300FE3750 /* Cancellable.swift */,
+				8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */,
+				8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,11 +306,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1DDA5221BED40300FE3750 /* Cancellable.swift in Sources */,
 				62D077A421AA2DF600837C0C /* NetworkManager.swift in Sources */,
+				8F1DDA5521BEDBED00FE3750 /* NetworkInterceptorProtocol.swift in Sources */,
 				62D077A921AA2E6E00837C0C /* NetworkResponseDecoder.swift in Sources */,
 				62D077B821AA36A500837C0C /* HTTPParameterEncoding.swift in Sources */,
 				6217EFB821AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift in Sources */,
-				6217EFBC21AB12B600A845F2 /* NetworkTarget.swift in Sources */,
+				6217EFBC21AB12B600A845F2 /* NetworkTaskDescriptor.swift in Sources */,
+				8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */,
 				62D077A521AA2DF600837C0C /* NetworkResponse.swift in Sources */,
 				6217EFBA21AB0B1900A845F2 /* NetworkAPI.swift in Sources */,
 				62D077A321AA2DF600837C0C /* HTTPMethod.swift in Sources */,

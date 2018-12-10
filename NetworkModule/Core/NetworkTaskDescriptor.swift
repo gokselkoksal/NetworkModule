@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class NetworkTarget<Decoder: NetworkResponseDecoderProtocol> {
+public class NetworkTaskDescriptor<Decoder: NetworkResponseDecoderProtocol> {
   
   public let request: NetworkRequest
-  public let responseDecoder: Decoder
   public let responseValidators: [NetworkResponseValidatorProtocol]
+  public let responseDecoder: Decoder
   
   public init(
     request: NetworkRequest,
-    responseDecoder: Decoder,
-    responseValidators: [NetworkResponseValidatorProtocol])
+    responseValidators: [NetworkResponseValidatorProtocol],
+    responseDecoder: Decoder)
   {
     self.request = request
     self.responseDecoder = responseDecoder
