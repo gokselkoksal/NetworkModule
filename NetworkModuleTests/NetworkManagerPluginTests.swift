@@ -1,5 +1,5 @@
 //
-//  NetworkPluginTests.swift
+//  NetworkManagerPluginTests.swift
 //  NetworkModuleTests
 //
 //  Created by Goksel Koksal on 11/12/2018.
@@ -11,23 +11,23 @@ import NetworkModule
 import Nimble
 import Lightning
 
-class NetworkPluginTests: XCTestCase {
+class NetworkManagerPluginTests: XCTestCase {
   
   private let api = JSONPlaceholderAPI()
   
   private var manager: NetworkManager!
   private var adapter: MockNetworkAdapter!
-  private var plugin: MockNetworkPlugin!
+  private var plugin1: MockNetworkPlugin!
   private var plugin2: MockNetworkPlugin!
 
   override func setUp() {
     adapter = MockNetworkAdapter()
-    plugin = MockNetworkPlugin()
+    plugin1 = MockNetworkPlugin()
     plugin2 = MockNetworkPlugin()
-    manager = NetworkManager(networkAdapter: adapter, interceptor: nil, plugins: [plugin, plugin2])
+    manager = NetworkManager(networkAdapter: adapter, interceptor: nil, plugins: [plugin1, plugin2])
   }
 
-  func testMethods() throws {
+  func testCallbacks() throws {
     let task = self.api.posts()
     let expectedData = try ResourceLoader.loadResource(name: "posts", extension: "json")
     adapter.result = .success(expectedData)
@@ -41,24 +41,24 @@ class NetworkPluginTests: XCTestCase {
           let expectedURLRequest = try expectedResponse.request.unwrap()
           let expectedPosts = try task.responseDecoder.decode(expectedResponse).result.value.unwrap()
           
-          expect(self.plugin.events.count).to(equal(4))
+          expect(self.plugin1.events.count).to(equal(4))
           expect(self.plugin2.events.count).to(equal(4))
           
-          switch try self.plugin.events.element(at: 0) {
+          switch try self.plugin1.events.element(at: 0) {
           case .prepareRequest(let request):
             expect(request).to(equal(expectedURLRequest))
           default:
             fail("should be prepareRequest")
           }
           
-          switch try self.plugin.events.element(at: 1) {
+          switch try self.plugin1.events.element(at: 1) {
           case .willSendRequest(let request):
             expect(request).to(equal(expectedURLRequest))
           default:
             fail("should be willSendRequest")
           }
           
-          switch try self.plugin.events.element(at: 2) {
+          switch try self.plugin1.events.element(at: 2) {
           case .didReceiveResponse(let response):
             expect(response.request).to(equal(expectedResponse.request))
             expect(response.data).to(equal(expectedResponse.data))
@@ -68,7 +68,7 @@ class NetworkPluginTests: XCTestCase {
             fail("should be didReceiveResponse")
           }
           
-          switch try self.plugin.events.element(at: 3) {
+          switch try self.plugin1.events.element(at: 3) {
           case .didDecodeResponse(let response):
             expect(response.request).to(equal(expectedResponse.request))
             expect(response.data).to(equal(expectedResponse.data))
@@ -100,7 +100,7 @@ class NetworkPluginTests: XCTestCase {
     let header1 = (key: "plugin1", value: "value1")
     let header2 = (key: "plugin2", value: "value2")
     
-    plugin.prepareRequestAction = { request in
+    plugin1.prepareRequestAction = { request in
       var request = request
       request.addValue(header1.value, forHTTPHeaderField: header1.key)
       return request

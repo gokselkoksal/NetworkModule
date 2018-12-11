@@ -16,7 +16,7 @@
 		6217EFCA21AB261C00A845F2 /* JSONPlaceholderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFC921AB261C00A845F2 /* JSONPlaceholderAPI.swift */; };
 		6217EFCC21AB26B900A845F2 /* ResponseStatusCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */; };
 		62D0778821AA2D1600837C0C /* NetworkModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D0777E21AA2D1500837C0C /* NetworkModule.framework */; };
-		62D0778D21AA2D1600837C0C /* NetworkModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */; };
+		62D0778D21AA2D1600837C0C /* LiveNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0778C21AA2D1600837C0C /* LiveNetworkManagerTests.swift */; };
 		62D0778F21AA2D1600837C0C /* NetworkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 62D0778121AA2D1500837C0C /* NetworkModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62D077A221AA2DF600837C0C /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0779E21AA2DF600837C0C /* NetworkRequest.swift */; };
 		62D077A321AA2DF600837C0C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0779F21AA2DF600837C0C /* HTTPMethod.swift */; };
@@ -29,7 +29,7 @@
 		8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */; };
 		8F1DDA5221BED40300FE3750 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5121BED40300FE3750 /* Cancellable.swift */; };
 		8F1DDA5521BEDBED00FE3750 /* NetworkInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */; };
-		8F91CE2621BFCF5C002ACAEC /* NetworkPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */; };
+		8F91CE2621BFCF5C002ACAEC /* NetworkManagerPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE2521BFCF5C002ACAEC /* NetworkManagerPluginTests.swift */; };
 		8F91CE2B21BFD32F002ACAEC /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F91CE2C21BFD332002ACAEC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; };
 		8F91CE3321BFD58F002ACAEC /* Lightning.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE3221BFD58F002ACAEC /* Lightning.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,7 +80,7 @@
 		62D0778121AA2D1500837C0C /* NetworkModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkModule.h; sourceTree = "<group>"; };
 		62D0778221AA2D1500837C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D0778721AA2D1600837C0C /* NetworkModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModuleTests.swift; sourceTree = "<group>"; };
+		62D0778C21AA2D1600837C0C /* LiveNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNetworkManagerTests.swift; sourceTree = "<group>"; };
 		62D0778E21AA2D1600837C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D0779E21AA2DF600837C0C /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		62D0779F21AA2DF600837C0C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerPlugin.swift; sourceTree = "<group>"; };
 		8F1DDA5121BED40300FE3750 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProtocol.swift; sourceTree = "<group>"; };
-		8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginTests.swift; sourceTree = "<group>"; };
+		8F91CE2521BFCF5C002ACAEC /* NetworkManagerPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerPluginTests.swift; sourceTree = "<group>"; };
 		8F91CE2821BFD297002ACAEC /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		8F91CE2921BFD297002ACAEC /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		8F91CE2A21BFD32F002ACAEC /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 				8F91CE3921BFD7B6002ACAEC /* AlamofireAdapters */,
 				6217EFC621AB252000A845F2 /* Components */,
 				62D0778E21AA2D1600837C0C /* Info.plist */,
-				62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */,
-				8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */,
+				62D0778C21AA2D1600837C0C /* LiveNetworkManagerTests.swift */,
+				8F91CE2521BFCF5C002ACAEC /* NetworkManagerPluginTests.swift */,
 			);
 			path = NetworkModuleTests;
 			sourceTree = "<group>";
@@ -423,12 +423,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62D0778D21AA2D1600837C0C /* NetworkModuleTests.swift in Sources */,
+				62D0778D21AA2D1600837C0C /* LiveNetworkManagerTests.swift in Sources */,
 				6217EFCA21AB261C00A845F2 /* JSONPlaceholderAPI.swift in Sources */,
 				8F91CE3621BFD6CB002ACAEC /* MockNetworkAdapter.swift in Sources */,
 				6217EFC221AB176600A845F2 /* AlamofireNetworkAdapter.swift in Sources */,
 				8F91CE3B21BFD7C9002ACAEC /* AlamofireMapper.swift in Sources */,
-				8F91CE2621BFCF5C002ACAEC /* NetworkPluginTests.swift in Sources */,
+				8F91CE2621BFCF5C002ACAEC /* NetworkManagerPluginTests.swift in Sources */,
 				8F91CE4221BFDC8F002ACAEC /* ResourceLoader.swift in Sources */,
 				8F91CE3821BFD738002ACAEC /* URLRequestBuilder.swift in Sources */,
 			);
