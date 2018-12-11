@@ -8,32 +8,23 @@
 
 import Foundation
 
-public protocol NetworkAdapterProtocol {
-  var delegate: NetworkAdapterDelegate? { get set }
-  func send(_ request: NetworkRequest, completion: @escaping (NetworkResponse<Data>) -> Void) -> Cancellable?
-}
-
-public protocol NetworkAdapterDelegate: class {
-  func prepareRequestForNetworkAdapter(_ request: URLRequest) -> URLRequest
-  func networkAdapterWillSendRequest(_ request: URLRequest)
-  func networkAdapterDidReceiveResponse(_ response: NetworkResponse<Data>)
-}
-
 public class NetworkManager {
   
   // TODO: Add stubbing.
   private let networkAdapter: NetworkAdapterProtocol
   private let interceptor: NetworkInterceptorProtocol?
-  private let plugins: [NetworkPluginProtocol]
+  private let plugins: [NetworkManagerPluginProtocol]
   
   public init(
     networkAdapter: NetworkAdapterProtocol,
     interceptor: NetworkInterceptorProtocol? = nil,
-    plugins: [NetworkPluginProtocol] = [])
+    plugins: [NetworkManagerPluginProtocol] = [])
   {
     self.networkAdapter = networkAdapter
     self.interceptor = interceptor
     self.plugins = plugins
+    
+    self.networkAdapter.delegate = self
   }
   
   @discardableResult

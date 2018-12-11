@@ -8,27 +8,25 @@
 
 import Foundation
 
-public protocol NetworkPluginProtocol {
+public protocol NetworkManagerPluginProtocol {
   
   /// Called to modify a request before sending.
+  ///
+  /// - Parameter request: Request to prepare.
   func prepareRequest(_ request: URLRequest) -> URLRequest
   
   /// Called immediately before a request is sent over the network (or stubbed).
+  ///
+  /// - Parameter request: Request to be sent.
   func willSendRequest(_ request: URLRequest)
   
-  /// Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
+  /// Called after a response has been received, but before the network manager has invoked its completion handler.
+  ///
+  /// - Parameter response: Raw response.
   func didReceiveResponse(_ response: NetworkResponse<Data>)
   
+  /// Called after a response has been decoded, but before the network manager has invoked its completion handler.
+  ///
+  /// - Parameter response: Decoded response.
   func didDecodeResponse<Model>(_ response: NetworkResponse<Model>)
-}
-
-public extension NetworkPluginProtocol {
-  
-  public func prepareRequest(_ request: URLRequest) -> URLRequest {
-    return request
-  }
-  
-  public func willSendRequest(_ request: URLRequest) { }
-  public func didReceiveResponse(_ response: NetworkResponse<Data>) { }
-  public func didDecodeResponse<Model>(_ response: NetworkResponse<Model>) { }
 }

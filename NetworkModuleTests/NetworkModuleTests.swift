@@ -20,10 +20,10 @@ class NetworkModuleTests: XCTestCase {
     let exp = expectation(description: "posts-request")
     networkManager.start(api.posts()) { (response) in
       switch response.result {
-      case .success(let value):
-        print(value)
+      case .success(let posts):
+        XCTAssertTrue(posts.count > 0)
       case .failure(let error):
-        print(error)
+        XCTFail(error.localizedDescription)
       }
       exp.fulfill()
     }

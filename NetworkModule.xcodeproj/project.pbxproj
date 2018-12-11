@@ -29,10 +29,17 @@
 		8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */; };
 		8F1DDA5221BED40300FE3750 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5121BED40300FE3750 /* Cancellable.swift */; };
 		8F1DDA5521BEDBED00FE3750 /* NetworkInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */; };
+		8F91CE2621BFCF5C002ACAEC /* NetworkPluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */; };
 		8F91CE2B21BFD32F002ACAEC /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F91CE2C21BFD332002ACAEC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; };
 		8F91CE3321BFD58F002ACAEC /* Lightning.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE3221BFD58F002ACAEC /* Lightning.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F91CE3421BFD592002ACAEC /* Lightning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE3221BFD58F002ACAEC /* Lightning.framework */; };
+		8F91CE3621BFD6CB002ACAEC /* MockNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE3521BFD6CB002ACAEC /* MockNetworkAdapter.swift */; };
+		8F91CE3821BFD738002ACAEC /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE3721BFD738002ACAEC /* URLRequestBuilder.swift */; };
+		8F91CE3B21BFD7C9002ACAEC /* AlamofireMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE3A21BFD7C9002ACAEC /* AlamofireMapper.swift */; };
+		8F91CE3F21BFDC4F002ACAEC /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F91CE3E21BFDC4F002ACAEC /* posts.json */; };
+		8F91CE4221BFDC8F002ACAEC /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE4121BFDC8F002ACAEC /* ResourceLoader.swift */; };
+		8FD6776721C016410068D212 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6776621C016410068D212 /* NetworkAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +93,17 @@
 		8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerPlugin.swift; sourceTree = "<group>"; };
 		8F1DDA5121BED40300FE3750 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProtocol.swift; sourceTree = "<group>"; };
+		8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPluginTests.swift; sourceTree = "<group>"; };
 		8F91CE2821BFD297002ACAEC /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		8F91CE2921BFD297002ACAEC /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		8F91CE2A21BFD32F002ACAEC /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		8F91CE3221BFD58F002ACAEC /* Lightning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lightning.framework; path = Carthage/Build/iOS/Lightning.framework; sourceTree = "<group>"; };
+		8F91CE3521BFD6CB002ACAEC /* MockNetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkAdapter.swift; sourceTree = "<group>"; };
+		8F91CE3721BFD738002ACAEC /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		8F91CE3A21BFD7C9002ACAEC /* AlamofireMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireMapper.swift; sourceTree = "<group>"; };
+		8F91CE3E21BFDC4F002ACAEC /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = posts.json; path = ../../../../../posts.json; sourceTree = "<group>"; };
+		8F91CE4121BFDC8F002ACAEC /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		8FD6776621C016410068D212 /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,18 +138,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6217EFC621AB252000A845F2 /* Helpers */ = {
+		6217EFC621AB252000A845F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				6217EFC921AB261C00A845F2 /* JSONPlaceholderAPI.swift */,
-				6217EFC121AB176600A845F2 /* AlamofireNetworkAdapter.swift */,
+				8F91CE3521BFD6CB002ACAEC /* MockNetworkAdapter.swift */,
 			);
-			path = Helpers;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		62D0777421AA2D1500837C0C = {
 			isa = PBXGroup;
 			children = (
+				8F91CE2721BFD288002ACAEC /* Dependencies */,
 				62D0778021AA2D1500837C0C /* NetworkModule */,
 				62D0778B21AA2D1600837C0C /* NetworkModuleTests */,
 				62D0777F21AA2D1500837C0C /* Products */,
@@ -156,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				62D077B121AA327700837C0C /* Helpers */,
-				8F1DDA5321BEDBC300FE3750 /* Misc */,
+				8FD6776821C019460068D212 /* Core+Helpers */,
 				62D0779D21AA2DDE00837C0C /* Core */,
 				62D0778121AA2D1500837C0C /* NetworkModule.h */,
 				62D0778221AA2D1500837C0C /* Info.plist */,
@@ -167,9 +182,13 @@
 		62D0778B21AA2D1600837C0C /* NetworkModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				6217EFC621AB252000A845F2 /* Helpers */,
-				62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */,
+				8F91CE4021BFDC85002ACAEC /* Helpers */,
+				8F91CE3C21BFDBFE002ACAEC /* Resources */,
+				8F91CE3921BFD7B6002ACAEC /* AlamofireAdapters */,
+				6217EFC621AB252000A845F2 /* Components */,
 				62D0778E21AA2D1600837C0C /* Info.plist */,
+				62D0778C21AA2D1600837C0C /* NetworkModuleTests.swift */,
+				8F91CE2521BFCF5C002ACAEC /* NetworkPluginTests.swift */,
 			);
 			path = NetworkModuleTests;
 			sourceTree = "<group>";
@@ -177,14 +196,9 @@
 		62D0779D21AA2DDE00837C0C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				62D077A021AA2DF600837C0C /* NetworkManager.swift */,
-				6217EFBB21AB12B600A845F2 /* NetworkTaskDescriptor.swift */,
-				62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */,
-				62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */,
-				62D0779E21AA2DF600837C0C /* NetworkRequest.swift */,
-				62D077A121AA2DF600837C0C /* NetworkResponse.swift */,
-				62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */,
-				62D0779F21AA2DF600837C0C /* HTTPMethod.swift */,
+				8FD6776521C015EE0068D212 /* Task */,
+				8FD6776421C015E10068D212 /* Manager */,
+				8F1DDA5321BEDBC300FE3750 /* Misc */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -193,9 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				62D077B221AA328200837C0C /* Result.swift */,
-				6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */,
-				6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */,
-				6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,9 +214,9 @@
 		8F1DDA5321BEDBC300FE3750 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				62D077B721AA36A500837C0C /* HTTPParameterEncoding.swift */,
+				62D0779F21AA2DF600837C0C /* HTTPMethod.swift */,
 				8F1DDA5121BED40300FE3750 /* Cancellable.swift */,
-				8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */,
-				8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -217,6 +228,65 @@
 				8F91CE2821BFD297002ACAEC /* Cartfile.resolved */,
 			);
 			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		8F91CE3921BFD7B6002ACAEC /* AlamofireAdapters */ = {
+			isa = PBXGroup;
+			children = (
+				6217EFC121AB176600A845F2 /* AlamofireNetworkAdapter.swift */,
+				8F91CE3A21BFD7C9002ACAEC /* AlamofireMapper.swift */,
+				8F91CE3721BFD738002ACAEC /* URLRequestBuilder.swift */,
+			);
+			path = AlamofireAdapters;
+			sourceTree = "<group>";
+		};
+		8F91CE3C21BFDBFE002ACAEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8F91CE3E21BFDC4F002ACAEC /* posts.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8F91CE4021BFDC85002ACAEC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8F91CE4121BFDC8F002ACAEC /* ResourceLoader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8FD6776421C015E10068D212 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				62D077A021AA2DF600837C0C /* NetworkManager.swift */,
+				8FD6776621C016410068D212 /* NetworkAdapter.swift */,
+				8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */,
+				8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8FD6776521C015EE0068D212 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				6217EFBB21AB12B600A845F2 /* NetworkTaskDescriptor.swift */,
+				62D0779E21AA2DF600837C0C /* NetworkRequest.swift */,
+				62D077A121AA2DF600837C0C /* NetworkResponse.swift */,
+				62D077A621AA2E5900837C0C /* NetworkResponseValidator.swift */,
+				62D077A821AA2E6E00837C0C /* NetworkResponseDecoder.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		8FD6776821C019460068D212 /* Core+Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6217EFB921AB0B1900A845F2 /* NetworkAPI.swift */,
+				6217EFB721AB0AA600A845F2 /* DecodableNetworkResponseDecoder.swift */,
+				6217EFCB21AB26B900A845F2 /* ResponseStatusCodeValidator.swift */,
+			);
+			path = "Core+Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F91CE3F21BFDC4F002ACAEC /* posts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +410,7 @@
 				8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */,
 				62D077A521AA2DF600837C0C /* NetworkResponse.swift in Sources */,
 				6217EFBA21AB0B1900A845F2 /* NetworkAPI.swift in Sources */,
+				8FD6776721C016410068D212 /* NetworkAdapter.swift in Sources */,
 				62D077A321AA2DF600837C0C /* HTTPMethod.swift in Sources */,
 				62D077A221AA2DF600837C0C /* NetworkRequest.swift in Sources */,
 				62D077B321AA328200837C0C /* Result.swift in Sources */,
@@ -353,7 +425,12 @@
 			files = (
 				62D0778D21AA2D1600837C0C /* NetworkModuleTests.swift in Sources */,
 				6217EFCA21AB261C00A845F2 /* JSONPlaceholderAPI.swift in Sources */,
+				8F91CE3621BFD6CB002ACAEC /* MockNetworkAdapter.swift in Sources */,
 				6217EFC221AB176600A845F2 /* AlamofireNetworkAdapter.swift in Sources */,
+				8F91CE3B21BFD7C9002ACAEC /* AlamofireMapper.swift in Sources */,
+				8F91CE2621BFCF5C002ACAEC /* NetworkPluginTests.swift in Sources */,
+				8F91CE4221BFDC8F002ACAEC /* ResourceLoader.swift in Sources */,
+				8F91CE3821BFD738002ACAEC /* URLRequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

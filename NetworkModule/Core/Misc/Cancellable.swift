@@ -8,10 +8,13 @@
 
 import Foundation
 
+/// Represents a cancel token.
 public protocol Cancellable: class {
   var isCancelled: Bool { get }
   func cancel()
 }
+
+// MARK: - CancellableToken
 
 public final class CancellableToken: Cancellable {
   
@@ -42,6 +45,8 @@ public extension CancellableToken {
     }
   }
 }
+
+// MARK: - CancellableWrapper
 
 final class CancellableWrapper: Cancellable {
   
