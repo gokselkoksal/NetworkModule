@@ -83,11 +83,10 @@ class NetworkManagerPluginTests: XCTestCase {
           default:
             fail("should be didDecodeResponse")
           }
-          done()
         } catch {
           fail(error.localizedDescription)
-          done()
         }
+        done()
       }
     }
   }

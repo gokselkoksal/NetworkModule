@@ -24,3 +24,14 @@ public class NetworkTaskDescriptor<Decoder: NetworkResponseDecoderProtocol> {
     self.responseValidators = responseValidators
   }
 }
+
+public extension NetworkTaskDescriptor {
+  
+  public func updatingRequest(_ request: NetworkRequest) -> NetworkTaskDescriptor<Decoder> {
+    return NetworkTaskDescriptor(
+      request: request,
+      responseValidators: responseValidators,
+      responseDecoder: responseDecoder
+    )
+  }
+}

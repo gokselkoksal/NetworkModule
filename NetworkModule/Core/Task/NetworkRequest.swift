@@ -30,6 +30,27 @@ public class NetworkRequest {
   }
 }
 
+public extension NetworkRequest {
+  
+  public func updatingHeaders(_ headers: [String: String]) -> NetworkRequest {
+    return NetworkRequest(
+      baseURL: baseURL,
+      path: path,
+      method: method,
+      operationType: operationType,
+      headers: headers
+    )
+  }
+  
+  public func appendingHeaders(_ newHeaders: [String: String]) -> NetworkRequest {
+    var mergedHeaders = headers ?? [:]
+    mergedHeaders.merge(newHeaders) { (_, new) -> String in
+      return new
+    }
+    return updatingHeaders(mergedHeaders)
+  }
+}
+
 // MARK: - Network operation types
 
 public enum NetworkOperationType {

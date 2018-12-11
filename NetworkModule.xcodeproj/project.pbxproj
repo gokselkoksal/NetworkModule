@@ -40,6 +40,7 @@
 		8F91CE3F21BFDC4F002ACAEC /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F91CE3E21BFDC4F002ACAEC /* posts.json */; };
 		8F91CE4221BFDC8F002ACAEC /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F91CE4121BFDC8F002ACAEC /* ResourceLoader.swift */; };
 		8FD6776721C016410068D212 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6776621C016410068D212 /* NetworkAdapter.swift */; };
+		8FD6776C21C01EB00068D212 /* NetworkInterceptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6776B21C01EB00068D212 /* NetworkInterceptorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		8F91CE3E21BFDC4F002ACAEC /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = posts.json; path = ../../../../../posts.json; sourceTree = "<group>"; };
 		8F91CE4121BFDC8F002ACAEC /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
 		8FD6776621C016410068D212 /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		8FD6776B21C01EB00068D212 /* NetworkInterceptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				62D0778E21AA2D1600837C0C /* Info.plist */,
 				62D0778C21AA2D1600837C0C /* LiveNetworkManagerTests.swift */,
 				8F91CE2521BFCF5C002ACAEC /* NetworkManagerPluginTests.swift */,
+				8FD6776B21C01EB00068D212 /* NetworkInterceptorTests.swift */,
 			);
 			path = NetworkModuleTests;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62D0778D21AA2D1600837C0C /* LiveNetworkManagerTests.swift in Sources */,
+				8FD6776C21C01EB00068D212 /* NetworkInterceptorTests.swift in Sources */,
 				6217EFCA21AB261C00A845F2 /* JSONPlaceholderAPI.swift in Sources */,
 				8F91CE3621BFD6CB002ACAEC /* MockNetworkAdapter.swift in Sources */,
 				6217EFC221AB176600A845F2 /* AlamofireNetworkAdapter.swift in Sources */,
