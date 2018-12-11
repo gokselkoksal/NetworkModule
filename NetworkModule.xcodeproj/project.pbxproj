@@ -29,6 +29,10 @@
 		8F1DDA4E21BEB40000FE3750 /* NetworkManagerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */; };
 		8F1DDA5221BED40300FE3750 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5121BED40300FE3750 /* Cancellable.swift */; };
 		8F1DDA5521BEDBED00FE3750 /* NetworkInterceptorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */; };
+		8F91CE2B21BFD32F002ACAEC /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F91CE2C21BFD332002ACAEC /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE2A21BFD32F002ACAEC /* Nimble.framework */; };
+		8F91CE3321BFD58F002ACAEC /* Lightning.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE3221BFD58F002ACAEC /* Lightning.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F91CE3421BFD592002ACAEC /* Lightning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F91CE3221BFD58F002ACAEC /* Lightning.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6217EFC421AB238F00A845F2 /* Alamofire.framework in Copy Frameworks */,
+				8F91CE2B21BFD32F002ACAEC /* Nimble.framework in Copy Frameworks */,
+				8F91CE3321BFD58F002ACAEC /* Lightning.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +86,10 @@
 		8F1DDA4D21BEB40000FE3750 /* NetworkManagerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerPlugin.swift; sourceTree = "<group>"; };
 		8F1DDA5121BED40300FE3750 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProtocol.swift; sourceTree = "<group>"; };
+		8F91CE2821BFD297002ACAEC /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		8F91CE2921BFD297002ACAEC /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		8F91CE2A21BFD32F002ACAEC /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		8F91CE3221BFD58F002ACAEC /* Lightning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lightning.framework; path = Carthage/Build/iOS/Lightning.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,8 @@
 			files = (
 				62D0778821AA2D1600837C0C /* NetworkModule.framework in Frameworks */,
 				6217EFBF21AB175200A845F2 /* Alamofire.framework in Frameworks */,
+				8F91CE2C21BFD332002ACAEC /* Nimble.framework in Frameworks */,
+				8F91CE3421BFD592002ACAEC /* Lightning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +117,8 @@
 		6217EFBD21AB175100A845F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F91CE3221BFD58F002ACAEC /* Lightning.framework */,
+				8F91CE2A21BFD32F002ACAEC /* Nimble.framework */,
 				6217EFBE21AB175100A845F2 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -194,6 +208,15 @@
 				8F1DDA5421BEDBED00FE3750 /* NetworkInterceptorProtocol.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		8F91CE2721BFD288002ACAEC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				8F91CE2921BFD297002ACAEC /* Cartfile.private */,
+				8F91CE2821BFD297002ACAEC /* Cartfile.resolved */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
