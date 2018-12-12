@@ -23,7 +23,7 @@ class NetworkInterceptorTests: XCTestCase {
     adapter = MockNetworkAdapter()
     adapter.result = .success(try! ResourceLoader.loadResource(name: "posts", extension: "json"))
     interceptor = MockNetworkInterceptor()
-    manager = NetworkManager(networkAdapter: adapter, interceptor: interceptor)
+    manager = NetworkManager(adapter: adapter, interceptor: interceptor)
   }
 
   func testSuccess() {

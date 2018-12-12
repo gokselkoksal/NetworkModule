@@ -18,7 +18,7 @@ class LiveNetworkManagerTests: XCTestCase {
   private var manager: NetworkManager!
   
   override func setUp() {
-    manager = NetworkManager(networkAdapter: adapter)
+    manager = NetworkManager(adapter: adapter)
   }
   
   func testExample() {

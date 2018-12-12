@@ -10,16 +10,22 @@ import Foundation
 
 public class NetworkRequest {
   
+  public enum OperationType {
+    case plainRequest
+    case requestWithURLParameters([String: Any]?)
+    case requestWithParameters(parameters: [String: Any]?, encoding: HTTPParameterEncoding)
+  }
+  
   public let baseURL: URL
   public let path: String
   public let method: HTTPMethod
-  public let operationType: NetworkOperationType
+  public let operationType: OperationType
   public let headers: [String: String]?
   
   public init(baseURL: URL,
               path: String,
               method: HTTPMethod,
-              operationType: NetworkOperationType,
+              operationType: OperationType,
               headers: [String: String]?)
   {
     self.baseURL = baseURL
@@ -49,12 +55,4 @@ public extension NetworkRequest {
     }
     return updatingHeaders(mergedHeaders)
   }
-}
-
-// MARK: - Network operation types
-
-public enum NetworkOperationType {
-  case plainRequest
-  case requestWithURLParameters([String: Any]?)
-  case requestWithParameters(parameters: [String: Any]?, encoding: HTTPParameterEncoding)
 }

@@ -20,7 +20,7 @@ class NetworkResponseValidatorTests: XCTestCase {
   override func setUp() {
     adapter = MockNetworkAdapter()
     adapter.result = .success(try! ResourceLoader.loadResource(name: "posts", extension: "json"))
-    manager = NetworkManager(networkAdapter: adapter)
+    manager = NetworkManager(adapter: adapter)
   }
 
   func testSingleValidator() {

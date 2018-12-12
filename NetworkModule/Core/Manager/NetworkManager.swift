@@ -11,20 +11,20 @@ import Foundation
 public class NetworkManager {
   
   // TODO: Add stubbing.
-  private let networkAdapter: NetworkAdapterProtocol
+  private let adapter: NetworkAdapterProtocol
   private let interceptor: NetworkInterceptorProtocol?
   private let plugins: [NetworkManagerPluginProtocol]
   
   public init(
-    networkAdapter: NetworkAdapterProtocol,
+    adapter: NetworkAdapterProtocol,
     interceptor: NetworkInterceptorProtocol? = nil,
     plugins: [NetworkManagerPluginProtocol] = [])
   {
-    self.networkAdapter = networkAdapter
+    self.adapter = adapter
     self.interceptor = interceptor
     self.plugins = plugins
     
-    self.networkAdapter.delegate = self
+    self.adapter.delegate = self
   }
   
   @discardableResult
@@ -35,7 +35,7 @@ public class NetworkManager {
     let cancellableWrapper = CancellableWrapper()
     
     func performActualTask(_ task: NetworkTaskDescriptor<Decoder>) {
-      let requestToken = self.networkAdapter.send(task.request) { [weak self] (dataResponse) in
+      let requestToken = self.adapter.send(task.request) { [weak self] (dataResponse) in
         guard let self = self else { return }
         
         do {

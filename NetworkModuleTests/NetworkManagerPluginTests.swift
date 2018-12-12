@@ -24,7 +24,7 @@ class NetworkManagerPluginTests: XCTestCase {
     adapter = MockNetworkAdapter()
     plugin1 = MockNetworkPlugin()
     plugin2 = MockNetworkPlugin()
-    manager = NetworkManager(networkAdapter: adapter, interceptor: nil, plugins: [plugin1, plugin2])
+    manager = NetworkManager(adapter: adapter, interceptor: nil, plugins: [plugin1, plugin2])
   }
 
   func testCallbacks() throws {

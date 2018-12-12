@@ -19,7 +19,7 @@ public extension NetworkAPIProtocol {
   public func makeTask<ResponseDecoder: NetworkResponseDecoderProtocol>(
     path: String,
     method: HTTPMethod,
-    operationType: NetworkOperationType,
+    operationType: NetworkRequest.OperationType,
     responseDecoder: ResponseDecoder,
     additionalHeaders: [String: String]? = nil,
     additionalResponseValidators: [NetworkResponseValidatorProtocol]? = nil) -> NetworkTaskDescriptor<ResponseDecoder>
