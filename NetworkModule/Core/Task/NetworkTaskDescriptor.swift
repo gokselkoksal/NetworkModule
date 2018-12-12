@@ -34,4 +34,13 @@ public extension NetworkTaskDescriptor {
       responseDecoder: responseDecoder
     )
   }
+  
+  public func addingResponseValidators(_ validators: [NetworkResponseValidatorProtocol]) -> NetworkTaskDescriptor<Decoder> {
+    let updatedResponseValidators = responseValidators + validators
+    return NetworkTaskDescriptor(
+      request: request,
+      responseValidators: updatedResponseValidators,
+      responseDecoder: responseDecoder
+    )
+  }
 }
